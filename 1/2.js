@@ -17,7 +17,14 @@ for (let elf of elves) {
             wealth += itemWeight;
         }
     }
-    if (wealth > Math.min(mostWealthyElves)) mostWealthyElves[1] = wealth;
+    mostWealthyElves.sort(function(a, b){return b-a});
+    if (wealth > mostWealthyElves[2])  {
+        mostWealthyElves.push(wealth);
+        mostWealthyElves.sort(function(a, b){return b-a});
+        mostWealthyElves.pop();
+    }
 }
 
 console.log(mostWealthyElves)
+totalCalories = mostWealthyElves.reduce((a, b) => a + b, 0)
+console.log(totalCalories)
