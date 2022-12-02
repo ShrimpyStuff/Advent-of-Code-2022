@@ -7,6 +7,7 @@ rounds.pop()
 
 let totalPoints = 0;
 
+// PlayedValue : [win, draw]
 let RPSval = {"A": [2, 1], "B": [3, 2], "C": [1, 3]}
 
 for (let round of rounds) {
