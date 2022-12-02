@@ -7,15 +7,22 @@ rounds.pop()
 
 let totalPoints = 0;
 
-let RPSval = {"A": ["Y", "X", 1], "B": ["Z", "Y", 2], "C": ["X", "Z", 3]}
+let RPSval = {"A": [2, 1], "B": [3, 2], "C": [1, 3]}
 
 for (let round of rounds) {
     let played = round[2]
-    let win = (played === RPSval[round[0]][0]) ? 6 : 0
-    let draw = (played === RPSval[round[0]][1]) ? 3 : 0
-    totalPoints += RPSval[played][2]
-    totalPoints += win
-    totalPoints += draw
+    let val = 0;
+    switch(played) {
+        case "Z":
+            val = 6 + RPSval[round[0]][0]
+            break
+        case "Y":
+            val = 3 + RPSval[round[0]][1]
+            break
+        case "X":
+            val = 0 + (6 - (RPSval[round[0]][1] + RPSval[round[0]][0]))
+            break
+    }
+    totalPoints += val;
 }
-
 console.log(totalPoints)
