@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const rawFile = fs.readFileSync('input.txt',{encoding:'utf8'});;
+const rawFile = fs.readFileSync(__dirname + '/input.txt',{encoding:'utf8'});;
 
 let elfs = rawFile.split(/^\n/gm)
 elfs = elfs.map(x => x.split(/\n/gm))
