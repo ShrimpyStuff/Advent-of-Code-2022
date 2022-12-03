@@ -7,9 +7,8 @@ let packs = rawFile.match(/(?:.*\n){2}.*(?:\n|$)/g).map(x => x.match(/(.*)\n/g))
 let prioritySum = 0;
 
 for (let rucksacks of packs) {
-    let firstMatchLetters = rucksacks[1].match(new RegExp(`[${rucksacks[0]}]`, "g"))
-    let secondMatchLetters = rucksacks[2].match(new RegExp(`[${rucksacks[1]}]`, "g"))
-    let letter = firstMatchLetters.join().match(new RegExp(`[${secondMatchLetters.join("")}]`))[0]
+    let firstMatchLetters = rucksacks[1].match(new RegExp(`[${rucksacks[0]}]`, "g")).join("")
+    let letter = rucksacks[2].match(new RegExp(`[${firstMatchLetters}]`))[0]
     let points = (letter === letter.toUpperCase()) ? letter.charCodeAt(0)-38 : letter.charCodeAt(0)-96
     prioritySum += points;
 }
