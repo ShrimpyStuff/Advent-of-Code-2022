@@ -29,3 +29,5 @@ export function solution() {
     totalCalories = mostWealthyElves.reduce((a, b) => a + b, 0)
     return totalCalories;
 }
+
+solution();

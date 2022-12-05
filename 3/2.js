@@ -16,3 +16,5 @@ export function solution() {
 
     return prioritySum;
 }
+
+solution();

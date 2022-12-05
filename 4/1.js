@@ -20,3 +20,5 @@ export function solution() {
 
     return overlaps;
 }
+
+solution();

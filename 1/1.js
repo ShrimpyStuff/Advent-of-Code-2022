@@ -21,3 +21,5 @@ export function solution() {
 
     return mostWealthyElf;
 }
+
+solution();

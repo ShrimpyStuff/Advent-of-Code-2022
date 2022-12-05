@@ -22,3 +22,5 @@ export function solution() {
 
     return totalPoints;
 }
+
+solution();
