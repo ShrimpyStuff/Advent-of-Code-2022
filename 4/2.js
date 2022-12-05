@@ -13,7 +13,7 @@ export function solution() {
         let start2 = parseInt(pair[1][0])
         let end2 = parseInt(pair[1][1])
         
-        if ((start1 >= start2 && end1 <= end2) || (start2 >= start1 && end2 <= end1)) {
+        if ((start1 <= end2 && end1 >= start2)) {
             overlaps++;
         }
     }
